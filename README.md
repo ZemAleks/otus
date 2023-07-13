@@ -1,0 +1,1 @@
+Python QA Engineer test automation tutorial at Otus.
