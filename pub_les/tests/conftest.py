@@ -8,7 +8,11 @@ def rest_service():
     yield
     print("Shutting down REST service - Отключение службы REST")
 
-    
+@pytest.fixture
+def say_hello():
+    print("hello")
+    return 200
+
 
 @pytest.fixture()
 def connect_to_database():
