@@ -1,23 +1,25 @@
 import pytest
 
 
-
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="function", autouse=True)
 def rest_service():
     print("Setting up REST service - Настройка REST-сервиса")
-    yield
+    a = "code"
+    b = 200
+    yield a, b
     print("Shutting down REST service - Отключение службы REST")
 
+
 @pytest.fixture
-def say_hello():
+def say_hello(rest_service):
+    a1, b1 = rest_service  # получение адрессов из фикстуры
     print("hello")
-    return 200
+    return rest_service
 
 
 @pytest.fixture()
 def connect_to_database():
     connection = "- Connection process started - code status 200"
-
 
 
 @pytest.fixture()
