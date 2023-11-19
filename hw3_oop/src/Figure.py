@@ -2,8 +2,12 @@ from abc import ABC, abstractmethod
 
 
 class Figure(ABC):
+
+    # размеры сторон фигуры, длина, ширина, высота
+    @property
     def __init__(self):
         pass
+
 
     @abstractmethod
     def get_area(self):
