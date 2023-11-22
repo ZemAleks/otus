@@ -1,4 +1,4 @@
-from Figure import Figure
+from hw3_oop.src.Figure import Figure
 
 
 class Rectangle(Figure):
@@ -17,33 +17,20 @@ class Rectangle(Figure):
         self.side_b: int = side_b
         self.side_c: int = side_c
         self.side_d: int = side_d
-        self.name: str = f"Прямоугольник"  # имя, название геометрической фигуры
-        self.area = self.get_area  # расчет площади прямоугольника: area = a * b
-        self.perimetr = self.get_perimeter  # расчет периметра прямоугольника p = 2 * (a + b)
+        self.name: str = f"Rectangle"  # имя, название геометрической фигуры
+        self.get_area: int = self.side_a * self.side_b  # расчет площади прямоугольника: get_area = a * b
+        self.get_perimeter: int = 2 * (self.side_a + self.side_b)  # расчет периметра прямоугольника p = 2 * (a + b)
 
         if side_a <= 0 or side_b <= 0:
             raise ValueError("Прямоугольник не может быть создан.")
         elif side_a != side_c or side_b != side_d:  # Противоположные стороны прямоугольника не равны
             raise ValueError("Прямоугольник не может быть создан.")
 
-    # расчет площади прямоугольника: area = a * b
-    @property
-    def get_area(self) -> int:
-        return self.side_a * self.side_b
+    def get_area(self):
+        return self.get_area
 
-    @property
-    def get_perimeter(self) -> int:
-        return 2 * (self.side_a + self.side_b)
-
-    # Каждая фигура должна реализовать метод add_area(figure),
-    # который должен принимать другую геометрическую фигуру и возвращать сумму площадей этих фигур.
-    # Функция isinstance() вернет True, если проверяемый объект является экземпляром указанного класса (классов).
-    # Функция, проверяет объект, который передается первым аргументом, на принадлежность к классу другого объекта.
-    # Если объект object не является экземпляром данного типа, то функция всегда возвращает False.
-    def add_area(self, other_figure) -> int:
-        if not isinstance(other_figure, Rectangle):
-            raise ValueError("Can't add area - Не могу добавить площадь")
-        return self.get_area + other_figure.get_area
+    def get_perimeter(self):
+        return self.get_perimeter
 
     def __str__(self) -> str:
         return (f"Прямоугольник с площадью: {'{:.0f}'.format(self.get_area)}, "
@@ -51,14 +38,12 @@ class Rectangle(Figure):
                 f"и {self.side_b}")
 
 
-re = Rectangle(2, 4, 2, 4)
-
-print(Rectangle)
-print(Rectangle.get_area)
-# Функция dir() возвращает имена, доступные в локальной области, либо атрибуты указанного объекта в алфавитном порядке
-# print(dir(re))
-print(re)
-print(re.area)
-
-print(re.side_a)
-print(re.add_area)
+# re = Rectangle(2, 4, 2, 4)
+#
+# print(Rectangle)
+# print(Rectangle.get_area)
+# print(re)
+#
+# print(re.side_a)
+# print(re.add_area)
+# print(re.name)

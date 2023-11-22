@@ -1,4 +1,4 @@
-from Figure import Figure
+from hw3_oop.src.Figure import Figure
 
 
 class Triangle(Figure):
@@ -14,11 +14,14 @@ class Triangle(Figure):
         self.side_a: int = side_a
         self.side_b: int = side_b
         self.side_c: int = side_c
-        self.get_semiperimeter: float = (side_a + side_b + side_c) / 2  # расчет полупериметра
-        self.get_perimeter: int = side_a + side_b + side_c  # расчет периметра
+        self.name = f"Triangle"  # имя, название геометрической фигуры
+        self.get_semiperimeter: float = (side_a + side_b + side_c) / 2  # расчет полупериметра треугольника
+        self.get_perimeter: int = side_a + side_b + side_c  # расчет периметра треугольника p = a + b + c
         self.sem_a: float = self.get_semiperimeter - side_a  # расчет значения (s-a) для стороны - а
         self.sem_b: float = self.get_semiperimeter - side_b  # расчет значения (s-b) для стороны - b
         self.sem_c: float = self.get_semiperimeter - side_c  # расчет значения (s-c) для стороны - c
+        # расчет площади треугольника: get_area = (s * (s - a) * (s - b) * (s - c)) ** 0.5
+        self.get_area: int = (self.get_semiperimeter * self.sem_a * self.sem_b * self.sem_c) ** 0.5
 
         if side_a <= 0 or side_b <= 0 or side_c <= 0:
             raise ValueError("Треугольник не может быть создан.")
@@ -28,21 +31,11 @@ class Triangle(Figure):
             raise ValueError("Треугольник не может быть создан.")
         elif side_b + side_c <= side_a:
             raise ValueError("Треугольник не может быть создан.")
-        else:
-            self.name = f"Три стороны треугольника {side_a}, {side_b} и {side_c}."
 
-    # расчет площади треугольника: area = (s * (s - a) * (s - b) * (s - c)) ** 0.5
-    @property
     def get_area(self):
-        return (self.get_semiperimeter * self.sem_a * self.sem_b * self.sem_c) ** 0.5
+        return self.get_area
 
-    # расчет полупериметра треугольника: s = (a + b + c) / 2
-    def get_semiperimeter(self) -> float:
-        return self.get_semiperimeter
-
-    # Периметр находится путем сложения длин всех сторон треугольника
-    # расчет периметра: p = a + b + c
-    def get_perimeter(self) -> int:
+    def get_perimeter(self):
         return self.get_perimeter
 
     def __str__(self) -> str:
@@ -50,7 +43,10 @@ class Triangle(Figure):
                 f"полупериметром: {self.get_semiperimeter}, со сторонами: {self.side_a}, {self.side_b} и {self.side_c}")
 
 
-t = Triangle(3, 5, 6)
-print(Triangle)
-print(Triangle.get_area)
-print(t)
+# t = Triangle(3, 5, 6)
+# print(Triangle)
+# print(Triangle.get_area)
+# print(t)
+# print('{:.2f}'.format(t.get_area))
+# print(t.add_area)
+# print(t.name)
