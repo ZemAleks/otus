@@ -1,4 +1,4 @@
-from src.Rectangle import Rectangle, Square, Circle
+from hw3_oop.src import Rectangle, Square, Circle, Triangle
 import pytest
 
 
