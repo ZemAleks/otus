@@ -17,7 +17,7 @@ class Circle(Figure):
         self.axis_x: int = axis_x  # координата центра окружности по оси x
         self.axis_y: int = axis_y  # координата центра окружности по оси y
         self.radius: int = radius
-        self.pi: float = 3.14  # число Пи, равное π = 3.14
+        self.pi = 3.14  # число Пи, равное π = 3.14
         self.name = f"Circle"  # имя, название геометрической фигуры
 
         # axis_x и axis_y координаты центра окружности, по умолчанию центр находится в (0, 0).

@@ -26,7 +26,7 @@ class Square(Rectangle):
         self.side_b: int = side_a
         self.side_c: int = side_a
         self.side_d: int = side_a
-        self.name: str = f"Square"  # имя, название геометрической фигуры
+        self.name = f"Square"  # имя, название геометрической фигуры
 
     def __str__(self) -> str:
         return (f"Квадрат с площадью: {'{:.0f}'.format(self.get_area())}, "
@@ -34,15 +34,16 @@ class Square(Rectangle):
                 f"и {self.side_b}")
 
 
-sq = Square(10, 10, 10, 10)
-
-print(Square)
-print(Square.get_area(sq))
-print(sq)
-
-print(sq.get_area())    # площадь
-print(sq.side_a)
-print(sq.add_area(sq))  # сумма площадей
-
-print(sq.__doc__)   # вызвать строку документации docstring
-print(dir(sq))   # выводит дандер - dunder (двойное подчеркивание) / magic методы
+# sq = Square(10, 10, 10, 10)
+#
+# print(Square)
+# print(Square.get_area(sq))
+# print(sq)
+# print(f'Название фигуры: {sq.name} - квадрат.')
+#
+# print(sq.get_area())    # площадь
+# print(sq.side_a)
+# print(sq.add_area(sq))  # сумма площадей
+#
+# print(sq.__doc__)   # вызвать строку документации docstring
+# print(dir(sq))   # выводит дандер - dunder (двойное подчеркивание) / magic методы

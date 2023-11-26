@@ -20,7 +20,7 @@ class Rectangle(Figure):
         self.side_b: int = side_b
         self.side_c: int = side_c
         self.side_d: int = side_d
-        self.name: str = f"Rectangle"  # имя, название геометрической фигуры
+        self.name = f"Rectangle"  # имя, название геометрической фигуры
 
         if side_a <= 0 or side_b <= 0:
             raise ValueError("Прямоугольник не может быть создан.")
