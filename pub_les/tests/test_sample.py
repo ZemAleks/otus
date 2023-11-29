@@ -1,20 +1,14 @@
+<<<<<<< HEAD
 def test_one(rest_service):
-    a1, b1 = rest_service  # получение адрессов из фикстуры
-    result = "Service setup test data - Данные тестовой настройки"
+    result = "service setup test data"
     assert result
-    assert a1
-    assert b1
-    assert rest_service[0]  # взять первый элемент
     print(result)
-    print(rest_service)
-    print(rest_service[0])
-    print(a1, b1)
+    # print(rest_service) # результат, который вернул тест
+=======
 
-
-def test_another():
-    answer = 100 + 1
-    assert answer
-    print(answer)
+def test_one(rest_service):
+    print("service setup test data")
+>>>>>>> 3c779fa (added fixtures to the file conftest.py)
 
 
 def test_two(database):
@@ -22,16 +16,20 @@ def test_two(database):
     assert x + y == summ
     print("result = ", summ, "sec")
 
+<<<<<<< HEAD
 
-def test_three(say_hello):
-    answer = "validation response = something - твет проверки = что-нибудь"
-    assert answer
-    assert say_hello
-    print(answer)
-    print(say_hello)
-    print("server response result, = ", say_hello, "код результат ответа сервера")
+=======
+>>>>>>> 3c779fa (added fixtures to the file conftest.py)
+def test_three():
+    assert "something"
 
 
 def test_connect(connect_to_database):  # Прокидываем фикстуру в тест и она выполнится перед тестом
+<<<<<<< HEAD
     print(connect_to_database)  # Используем фикстуру, она вернет нам текст с подключением к БД
-    print("Database connection established - Соединение с базой данных установлено")
+    print("Database connection established")
+=======
+        print(connect_to_database)  # Используем фикстуру, она вернет нам текст с подключением к БД
+        print("Database connection established")
+
+>>>>>>> 3c779fa (added fixtures to the file conftest.py)
