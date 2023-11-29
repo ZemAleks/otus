@@ -1,35 +1,26 @@
-<<<<<<< HEAD
-def test_one(rest_service):
-    result = "service setup test data"
+def test_running(database):
+    result = "Running test data service setup - запуск службы настройки тестовых данных."
     assert result
-    print(result)
-    # print(rest_service) # результат, который вернул тест
-=======
-
-def test_one(rest_service):
-    print("service setup test data")
->>>>>>> 3c779fa (added fixtures to the file conftest.py)
+    print(result)   # результат, который вернул тест
 
 
-def test_two(database):
+def test_db(connect_to_database):
+    status_down = "bus connection status - статус подключения к шине БД."
+    print(status_down)
+    assert status_down
+    print(status_down)
+
+
+def test_time():
     x, y, summ = 1, 2, 3
     assert x + y == summ
-    print("result = ", summ, "sec")
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 3c779fa (added fixtures to the file conftest.py)
-def test_three():
-    assert "something"
+    print(f"Test time - время прохождения теста {summ} = sec.")
 
 
-def test_connect(connect_to_database):  # Прокидываем фикстуру в тест и она выполнится перед тестом
-<<<<<<< HEAD
-    print(connect_to_database)  # Используем фикстуру, она вернет нам текст с подключением к БД
-    print("Database connection established")
-=======
-        print(connect_to_database)  # Используем фикстуру, она вернет нам текст с подключением к БД
-        print("Database connection established")
+def test_connect(rest_service):  # Прокидываем фикстуру в тест и она выполнится перед тестом
+    status_connect = "Database connection established - Соединение с базой данных установлено."
+    assert status_connect
+    print(status_connect)  # Используем фикстуру, она вернет нам текст с подключением к БД
 
->>>>>>> 3c779fa (added fixtures to the file conftest.py)
+
+
