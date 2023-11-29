@@ -22,10 +22,7 @@ class Square(Rectangle):
         super().__init__(side_a, side_a, side_a, side_a)
         # Type hints — это подсказки типов данных в Python, чтобы контролировать типы данных.
         # Для указания типов атрибутов класса используйте аннотации типов и __init__ метод.
-        self.side_a: int = side_a
-        self.side_b: int = side_a
-        self.side_c: int = side_a
-        self.side_d: int = side_a
+
         self.name = f"Square"  # имя, название геометрической фигуры
 
     def __str__(self) -> str:
@@ -34,16 +31,16 @@ class Square(Rectangle):
                 f"и {self.side_b}")
 
 
-# sq = Square(10, 10, 10, 10)
-#
-# print(Square)
-# print(Square.get_area(sq))
-# print(sq)
-# print(f'Название фигуры: {sq.name} - квадрат.')
-#
-# print(sq.get_area())    # площадь
-# print(sq.side_a)
-# print(sq.add_area(sq))  # сумма площадей
-#
-# print(sq.__doc__)   # вызвать строку документации docstring
-# print(dir(sq))   # выводит дандер - dunder (двойное подчеркивание) / magic методы
+sq = Square(10, 10, 10, 10)
+
+print(Square)
+print(Square.get_area(sq))
+print(sq)
+print(f'Название фигуры: {sq.name} - квадрат.')
+
+print(sq.get_area())    # площадь
+print(sq.side_a)
+print(sq.add_area(sq))  # сумма площадей
+
+print(sq.__doc__)   # вызвать строку документации docstring
+print(dir(sq))   # выводит дандер - dunder (двойное подчеркивание) / magic методы
