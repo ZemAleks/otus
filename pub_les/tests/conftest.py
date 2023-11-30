@@ -16,9 +16,9 @@ def connect_to_database():
 
 @pytest.fixture(scope="module", autouse=True)
 def database():
-    print("Setting up database - Настройка базы данных")
+    print("Setting up database - Настройка подключения к базе данных")
     yield
-    print("Shutting down database - Отключение базы данных")
+    print("Shutting down database - Отключение от базы данных")
 
 
 
