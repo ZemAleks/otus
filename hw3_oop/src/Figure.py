@@ -24,7 +24,8 @@ class Figure(ABC):
     # Если хотите, чтобы ваш код выдавал NotImplementedError, то нужно удалить @abstractmethod декоратор.
 
     def get_area(self):
-        raise NotImplementedError("Subclasses should implement this!")
+        raise NotImplementedError(f"Subclasses should implement this exception! "
+                                  f"- Подклассы должны реализовать это исключение!")
 
     @abstractmethod
     def get_perimeter(self):
