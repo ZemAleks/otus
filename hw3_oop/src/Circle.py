@@ -39,13 +39,13 @@ class Circle(Figure):
                 f"периметр или длина окружности: {'{:.2f}'.format(self.get_perimeter())}")
 
 
-# c = Circle(0, 0, 4)
-#
-# print(Circle.add_area)
-# print(Circle)
-# print(Circle.get_area)
-# print(c)
-#
-# print(c.add_area(c))
-# print(c.name)
-# print(c.__doc__)   # вызвать строку документации docstring
+c = Circle(0, 0, 4)
+
+print(Circle.add_area)
+print(Circle)
+print(Circle.get_area)
+print(c)
+
+print(c.add_area(c))
+print(c.name)
+print(c.__doc__)   # вызвать строку документации docstring
