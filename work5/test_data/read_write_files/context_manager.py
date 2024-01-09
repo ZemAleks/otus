@@ -1,4 +1,4 @@
-from files import TXT_FILE
+from work5.test_data.read_write_files.files import TXT_FILE
 
 with open(TXT_FILE, "r") as file:
     print(file.read())
@@ -15,7 +15,6 @@ with open(TXT_FILE, "r") as file:
             break
 
 print("\n", 20 * "=", "\n")
-
 
 
 file = open(TXT_FILE, 'r')
