@@ -6,15 +6,11 @@ from files import CSV_FILE
 with open(CSV_FILE, newline='') as f:
     reader = csv.reader(f)
 
-    # Извлекаем заголовок
-    header = next(reader)
+    header = next(reader)   # Извлекаем заголовок
 
-    # Итерируемся по данным делая из них словари
-    for row in reader:
-        print(row)
-       # print(dict(zip(header, row)))
+    for row in reader:  # Итерируемся по данным делая из них словари
+        print(row)      # print(dict(zip(header, row)))
 
-print(100 * "+")
 
 with open(CSV_FILE, newline='') as f:
     reader = DictReader(f)
